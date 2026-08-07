@@ -10,254 +10,225 @@
   </head>
 
   <body>
+    <!-- ================= HEADER ================= -->
+
     <header>
       <nav>
-        <h1>🚀 TechPath</h1>
+        <div class="logo">🚀 TechPath</div>
 
         <ul>
           <li><a href="#home">Accueil</a></li>
-          <li><a href="#story">Mon histoire</a></li>
-          <li><a href="#domaines">Domaines</a></li>
-          <li><a href="#career">Carrières</a></li>
+          <li><a href="#jobs">Métiers</a></li>
+          <li><a href="#roadmap">Parcours</a></li>
+          <li><a href="#test">Orientation</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- ================= HERO ================= -->
 
     <section class="hero" id="home">
-      <div class="hero-text">
-        <h2>Ne choisis pas un langage...</h2>
+      <div class="hero-content">
+        <span> 🌍 Orientation numérique pour la nouvelle génération </span>
 
-        <h1>Choisis ton futur dans la technologie 🚀</h1>
+        <h1>
+          Ne choisis pas un langage.
+          <br />
+
+          Découvre ton futur.
+        </h1>
 
         <p>
-          Beaucoup de jeunes commencent le code sans comprendre où ils vont. Ils
-          apprennent Python, JavaScript ou Java parce que c'est populaire. Mais
-          un langage n'est qu'un outil. La vraie question est :
-
-          <strong> Quel problème veux-tu résoudre ? </strong>
+          Beaucoup de jeunes commencent le code sans comprendre où ils vont.
+          TechPath t'aide à découvrir : les métiers, les compétences, les
+          parcours réalistes et les projets à construire.
         </p>
 
-        <button>Découvrir mon chemin</button>
+        <button id="startTest">Trouver mon domaine 🚀</button>
       </div>
 
-      <div class="hero-image">
-        <img
-          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
-          alt="jeune développeur"
-        />
+      <div class="hero-visual">
+        <div class="ai-card">
+          🤖
+
+          <h3>Future AI Engineer</h3>
+
+          <p>Python • Data • ML • IA</p>
+        </div>
       </div>
     </section>
 
-    <!-- PROBLEME -->
+    <!-- ================= PROBLEME ================= -->
 
     <section class="problem">
-      <h2>Pourquoi beaucoup abandonnent ? ⚠️</h2>
+      <h2>Pourquoi les développeurs abandonnent ?</h2>
 
-      <div class="cards">
-        <div class="card">
+      <div class="grid">
+        <article>
+          <h3>❌ Apprendre sans objectif</h3>
+
+          <p>
+            "J'apprends Python parce que c'est populaire." Mais : IA ? Web ?
+            Data ? Automatisation ?
+          </p>
+        </article>
+
+        <article>
           <h3>❌ Copier sans comprendre</h3>
 
           <p>
-            Copier un code trouvé sur internet ne fait pas devenir développeur.
-            Comprendre pourquoi il fonctionne, oui.
+            Un code trouvé sur internet n'est pas une compétence. La
+            compréhension est la clé.
           </p>
-        </div>
+        </article>
 
-        <div class="card">
-          <h3>❌ Vouloir tout apprendre</h3>
+        <article>
+          <h3>❌ Vouloir tout maîtriser</h3>
 
           <p>
-            Python + Java + React + IA + Mobile en même temps... Résultat : on
-            connaît beaucoup de choses, mais rien profondément.
+            10 langages appris superficiellement ne remplacent pas une vraie
+            expertise.
           </p>
-        </div>
-
-        <div class="card">
-          <h3>❌ Ignorer les bases</h3>
-
-          <p>
-            Les meilleurs développeurs maîtrisent : logique, mathématiques,
-            algorithmes et résolution de problèmes.
-          </p>
-        </div>
+        </article>
       </div>
     </section>
 
-    <!-- HISTOIRE RUPHIN -->
+    <!-- ================= HISTOIRE ================= -->
 
-    <section class="story" id="story">
-      <h2>Mon erreur de débutant 💭</h2>
+    <section class="story">
+      <h2>Mon parcours et mes erreurs</h2>
 
-      <p>
-        Je suis Ruphin. Quand j'ai commencé le développement, je voulais
-        apprendre beaucoup de choses. Python, Web, IA, plusieurs technologies...
-        Parfois je copiais du code sans vraiment comprendre. Je pensais qu'un
-        grand développeur devait connaître tous les langages. Puis j'ai compris
-        :
-      </p>
+      <div class="story-box">
+        <p>
+          Je suis Ruphin. Au début, je voulais apprendre beaucoup de
+          technologies : Python, Web, IA... Parfois je copiais du code sans
+          vraiment comprendre. J'ai compris une chose :
+        </p>
 
-      <h3>
-        Un vrai développeur n'est pas celui qui connaît 100 outils. C'est celui
-        qui sait construire, comprendre et résoudre des problèmes.
-      </h3>
+        <h3>
+          Un ingénieur n'est pas celui qui connaît le plus de technologies.
+          C'est celui qui sait apprendre, comprendre et créer.
+        </h3>
+      </div>
     </section>
 
-    <!-- DOMAINES -->
+    <!-- ================= METIERS ================= -->
 
-    <section id="domaines">
-      <h2>Explore les mondes de la Tech 🌎</h2>
+    <section id="jobs">
+      <h2>Choisis un monde de la Tech</h2>
 
-      <div class="domains">
-        <div class="domain">
-          <h3>🤖 Intelligence Artificielle</h3>
-
-          <p>
-            Créer des machines intelligentes, des assistants IA et des robots.
-          </p>
-        </div>
-
-        <div class="domain">
-          <h3>🌐 Développement Web</h3>
+      <div class="grid jobs">
+        <article>
+          <h3>🤖 Ingénieur IA</h3>
 
           <p>
-            Créer des plateformes, des sites et des services utilisés partout.
+            Créer des intelligences artificielles, des robots et des systèmes
+            autonomes.
           </p>
-        </div>
+        </article>
 
-        <div class="domain">
-          <h3>📱 Développement Mobile</h3>
+        <article>
+          <h3>🌐 Développeur Web</h3>
 
-          <p>Créer des applications Android et iOS.</p>
-        </div>
+          <p>Créer des plateformes, sites et applications web.</p>
+        </article>
 
-        <div class="domain">
-          <h3>📊 Data Science</h3>
+        <article>
+          <h3>📱 Développeur Mobile</h3>
 
-          <p>Transformer les données en connaissances.</p>
-        </div>
+          <p>Créer des applications Android et mobiles utiles.</p>
+        </article>
 
-        <div class="domain">
+        <article>
+          <h3>📊 Data Engineer</h3>
+
+          <p>Construire les systèmes qui organisent les données.</p>
+        </article>
+
+        <article>
           <h3>🔐 Cybersécurité</h3>
 
-          <p>Protéger les systèmes et les informations.</p>
+          <p>Protéger les systèmes contre les attaques.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= ROADMAP ================= -->
+
+    <section id="roadmap">
+      <h2>Les chemins d'apprentissage</h2>
+
+      <div class="roadmaps">
+        <div>
+          <h3>🤖 IA Engineer</h3>
+
+          <p>
+            Python ↓ Maths ↓ Machine Learning ↓ Deep Learning ↓ IA Générative
+          </p>
+        </div>
+
+        <div>
+          <h3>🌐 Web Developer</h3>
+
+          <p>HTML/CSS ↓ JavaScript ↓ React ↓ Backend ↓ Applications</p>
+        </div>
+
+        <div>
+          <h3>📊 Data</h3>
+
+          <p>Python ↓ SQL ↓ Statistiques ↓ ML ↓ Data Engineering</p>
         </div>
       </div>
     </section>
 
-    <!-- LANGAGES -->
-
-    <section class="languages">
-      <h2>Les outils des créateurs 💻</h2>
-
-      <div class="logos">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-        />
-
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-        />
-
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-        />
-
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-        />
-
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-        />
-      </div>
-
-      <p>
-        Un professionnel ne cherche pas à apprendre tous les outils. Il apprend
-        les bons outils pour ses objectifs.
-      </p>
-    </section>
-
-    <!-- CARRIERES -->
-
-    <section id="career">
-      <h2>Les chemins possibles 🚀</h2>
-
-      <div class="skill">
-        <h3>🌐 Développement Web</h3>
-
-        <div class="bar">
-          <div class="web">85%</div>
-        </div>
-
-        <p>Très bonne porte d'entrée : freelance, entreprises, startups.</p>
-      </div>
-
-      <div class="skill">
-        <h3>📱 Développement Mobile</h3>
-
-        <div class="bar">
-          <div class="mobile">80%</div>
-        </div>
-
-        <p>Créer des applications utiles localement.</p>
-      </div>
-
-      <div class="skill">
-        <h3>🤖 Ingénieur IA</h3>
-
-        <div class="bar">
-          <div class="ai">90%</div>
-        </div>
-
-        <p>Un domaine puissant qui demande mathématiques, ML et patience.</p>
-      </div>
-
-      <div class="skill">
-        <h3>📊 Data Engineer / Data Scientist</h3>
-
-        <div class="bar">
-          <div class="data">75%</div>
-        </div>
-
-        <p>Comprendre et exploiter les données.</p>
-      </div>
-    </section>
-
-    <!-- AFRIQUE -->
+    <!-- ================= AFRIQUE ================= -->
 
     <section class="africa">
-      <h2>La réalité pour un jeune africain 🇨🇩</h2>
+      <h2>Construire depuis l'Afrique 🇨🇩</h2>
 
       <p>
-        Il n'existe pas un seul chemin. Mais commencer par le développement web
-        ou mobile peut être une stratégie intelligente : ✔ créer rapidement des
-        projets ✔ trouver des clients ✔ travailler à distance ✔ construire un
-        portfolio Ensuite tu peux évoluer vers : IA, Data, Cloud, Cybersécurité,
-        Robotique.
+        Il n'existe pas un chemin magique. Le développement web et mobile sont
+        souvent de bonnes portes d'entrée : ✔ créer rapidement des projets ✔
+        travailler avec des clients ✔ construire un portfolio Ensuite, on peut
+        évoluer vers : IA, Data, Cloud, Cybersécurité, Robotique.
       </p>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ================= TEST ================= -->
+
+    <section id="test">
+      <h2>Quel domaine est fait pour toi ?</h2>
+
+      <div class="quiz-box">
+        <p>Réponds à quelques questions et découvre ton profil.</p>
+
+        <div id="quiz">Le test intelligent arrivera ici 🧠</div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
 
     <section id="contact">
-      <h2>Construisons l'avenir 🚀</h2>
+      <h2>Créer ensemble 🚀</h2>
 
-      <p>
-        Je suis Ruphin. Développeur passionné par Python, la Data et
-        l'Intelligence Artificielle. J'ai créé TechPath pour aider les jeunes à
-        mieux choisir leur direction.
-      </p>
+      <div class="github-card">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+        />
 
-      <a href="https://github.com/geniruphin-junior"> Mon GitHub </a>
+        <div>
+          <h3>Ruphin</h3>
+
+          <p>Développeur Python • Data • IA Créateur de TechPath</p>
+        </div>
+      </div>
     </section>
 
     <footer>
       <p>TechPath © 2026</p>
 
-      <p>Apprendre. Construire. Innover.</p>
+      <p>Apprendre • Construire • Innover</p>
     </footer>
 
     <script src="script.js"></script>
