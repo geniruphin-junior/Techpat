@@ -1,294 +1,325 @@
-// ======================================
-//        TECHPATH AI ORIENTATION
-// ======================================
+"use strict";
 
-// ELEMENTS
+/*
+===========================================
+        TECHPATH ENGINE
+        Modern JavaScript Architecture
+===========================================
+*/
 
-const startButton = document.querySelector(".hero button");
+// ===============================
+// DATA
+// ===============================
 
-// ======================================
-// ANNEE AUTOMATIQUE
-// ======================================
+const careers = {
+  ai: {
+    icon: "🤖",
+    title: "Ingénieur IA",
+    score: 0,
+    description:
+      "Tu aimes les mathématiques, les systèmes complexes et créer des intelligences artificielles.",
+    roadmap: [
+      "Python",
+      "Algorithmique",
+      "Mathématiques",
+      "Machine Learning",
+      "Deep Learning",
+      "IA Générative",
+    ],
+  },
 
-const footerYear = document.querySelector("footer p");
+  web: {
+    icon: "🌐",
+    title: "Développeur Web",
+    score: 0,
+    description:
+      "Tu aimes créer des applications visibles par les utilisateurs.",
+    roadmap: ["HTML/CSS", "JavaScript", "React", "Backend", "Bases de données"],
+  },
 
-if (footerYear) {
-  footerYear.innerHTML = `TechPath © ${new Date().getFullYear()}`;
-}
+  mobile: {
+    icon: "📱",
+    title: "Développeur Mobile",
+    score: 0,
+    description: "Tu veux créer des applications utilisées sur smartphone.",
+    roadmap: ["Flutter ou Kotlin", "UI Mobile", "API", "Publication App"],
+  },
 
-// ======================================
-// BOUTON DEMARRAGE
-// ======================================
+  data: {
+    icon: "📊",
+    title: "Data Scientist",
+    score: 0,
+    description:
+      "Tu aimes comprendre les données et découvrir des informations cachées.",
+    roadmap: ["Python", "SQL", "Statistiques", "Machine Learning"],
+  },
 
-startButton.addEventListener("click", () => {
-  document.querySelector("#career").scrollIntoView({
-    behavior: "smooth",
-  });
+  cyber: {
+    icon: "🔐",
+    title: "Cybersécurité",
+    score: 0,
+    description: "Tu aimes protéger les systèmes et comprendre les réseaux.",
+    roadmap: ["Linux", "Réseaux", "Sécurité", "Pentesting"],
+  },
+};
 
-  setTimeout(() => {
-    startTest();
-  }, 1000);
-});
+// ===============================
+// QUIZ DATABASE
+// ===============================
 
-// ======================================
-// QUESTIONS ORIENTATION
-// ======================================
+const questions = [
+  {
+    text: "Qu'est-ce qui t'attire le plus ?",
 
-function startTest() {
-  const questions = [
-    {
-      question:
-        "Tu aimes beaucoup les mathématiques et résoudre des problèmes complexes ?",
+    answers: [
+      ["Créer des robots et IA", "ai"],
+      ["Créer des sites modernes", "web"],
+      ["Créer des applications mobiles", "mobile"],
+      ["Analyser des données", "data"],
+    ],
+  },
 
-      answers: [
-        {
-          text: "Oui beaucoup",
-          type: "ai",
-        },
+  {
+    text: "Aimes-tu beaucoup les mathématiques ?",
 
-        {
-          text: "Un peu",
-          type: "data",
-        },
+    answers: [
+      ["Oui, beaucoup", "ai"],
+      ["J'aime analyser", "data"],
+      ["Pas vraiment, je préfère créer", "web"],
+    ],
+  },
 
-        {
-          text: "Pas vraiment",
-          type: "web",
-        },
-      ],
-    },
+  {
+    text: "Quel problème veux-tu résoudre ?",
 
-    {
-      question: "Qu'aimerais-tu créer ?",
+    answers: [
+      ["Créer une machine intelligente", "ai"],
+      ["Aider les utilisateurs avec une application", "mobile"],
+      ["Créer des plateformes internet", "web"],
+      ["Comprendre le monde avec les données", "data"],
+    ],
+  },
 
-      answers: [
-        {
-          text: "Des robots et des intelligences artificielles 🤖",
-          type: "ai",
-        },
+  {
+    text: "Quel environnement t'intéresse ?",
 
-        {
-          text: "Des sites et plateformes 🌐",
-          type: "web",
-        },
+    answers: [
+      ["Ordinateurs et systèmes", "cyber"],
+      ["Données et modèles", "data"],
+      ["Interfaces et expériences", "web"],
+      ["Machines intelligentes", "ai"],
+    ],
+  },
+];
 
-        {
-          text: "Des applications mobiles 📱",
-          type: "mobile",
-        },
-      ],
-    },
+// ===============================
+// STATE
+// ===============================
 
-    {
-      question: "Tu préfères travailler avec ?",
+const state = {
+  currentQuestion: 0,
 
-      answers: [
-        {
-          text: "Des données et statistiques 📊",
-          type: "data",
-        },
-
-        {
-          text: "Des systèmes et sécurité 🔐",
-          type: "cyber",
-        },
-
-        {
-          text: "Des interfaces visuelles 🎨",
-          type: "web",
-        },
-      ],
-    },
-
-    {
-      question: "Quel environnement te passionne ?",
-
-      answers: [
-        {
-          text: "Machines, robots, IA",
-          type: "ai",
-        },
-
-        {
-          text: "Internet et applications",
-          type: "web",
-        },
-
-        {
-          text: "Téléphones et objets connectés",
-          type: "mobile",
-        },
-      ],
-    },
-  ];
-
-  let scores = {
+  scores: {
     ai: 0,
     web: 0,
     mobile: 0,
     data: 0,
     cyber: 0,
-  };
+  },
+};
 
-  let index = 0;
+// ===============================
+// DOM
+// ===============================
 
-  function askQuestion() {
-    if (index >= questions.length) {
-      showResult();
+const quiz = document.querySelector("#quiz");
 
-      return;
-    }
+const startButton = document.querySelector("#startTest");
 
-    const q = questions[index];
+// ===============================
+// START QUIZ
+// ===============================
 
-    let message = `${q.question}\n\n`;
+startButton?.addEventListener("click", () => {
+  document.querySelector("#test").scrollIntoView({
+    behavior: "smooth",
+  });
 
-    q.answers.forEach((answer, i) => {
-      message += `${i + 1} - ${answer.text}\n`;
+  setTimeout(renderQuestion, 700);
+});
+
+// ===============================
+// DISPLAY QUESTION
+// ===============================
+
+function renderQuestion() {
+  const question = questions[state.currentQuestion];
+
+  if (!question) {
+    showResult();
+
+    return;
+  }
+
+  quiz.innerHTML = `
+
+<div class="question">
+
+<h3>
+Question ${state.currentQuestion + 1}/${questions.length}
+</h3>
+
+
+<h2>
+${question.text}
+</h2>
+
+
+<div class="answers">
+
+
+${question.answers
+  .map(
+    (answer, index) => `
+
+<button 
+class="answer"
+data-type="${answer[1]}"
+>
+
+${answer[0]}
+
+</button>
+
+`,
+  )
+  .join("")}
+
+
+</div>
+
+
+</div>
+
+`;
+
+  document.querySelectorAll(".answer").forEach((button) => {
+    button.addEventListener("click", () => {
+      const type = button.dataset.type;
+
+      state.scores[type]++;
+
+      state.currentQuestion++;
+
+      renderQuestion();
     });
-
-    let choice = prompt(message);
-
-    let selected = q.answers[choice - 1];
-
-    if (selected) {
-      scores[selected.type]++;
-    }
-
-    index++;
-
-    askQuestion();
-  }
-
-  function showResult() {
-    let winner = Object.keys(scores)
-
-      .reduce((a, b) => (scores[a] > scores[b] ? a : b));
-
-    let results = {
-      ai: `
-
-🤖 Ton profil : Ingénieur IA
-
-Tu devrais apprendre :
-
-Python → Mathématiques → Machine Learning → Deep Learning → Backend.
-
-Tu aimes construire des systèmes intelligents.
-`,
-
-      web: `
-
-🌐 Ton profil : Développeur Web
-
-Parcours conseillé :
-
-HTML → CSS → JavaScript → React → Backend.
-
-Tu peux créer rapidement des produits.
-`,
-
-      mobile: `
-
-📱 Ton profil : Développeur Mobile
-
-Parcours :
-
-Dart/Flutter ou Kotlin → Applications → Backend.
-
-`,
-
-      data: `
-
-📊 Ton profil : Data Scientist
-
-Parcours :
-
-Python → Statistiques → SQL → Machine Learning.
-
-`,
-
-      cyber: `
-
-🔐 Ton profil : Cybersécurité
-
-Parcours :
-
-Réseaux → Linux → Sécurité → Pentesting.
-
-`,
-    };
-
-    alert(results[winner]);
-  }
-
-  askQuestion();
+  });
 }
 
-// ======================================
-// ANIMATION APPARITION AU SCROLL
-// ======================================
+// ===============================
+// RESULT
+// ===============================
 
-const sections = document.querySelectorAll("section");
+function showResult() {
+  const winner = Object.entries(state.scores)
+
+    .sort((a, b) => b[1] - a[1])[0][0];
+
+  const career = careers[winner];
+
+  quiz.innerHTML = `
+
+<div class="result">
+
+
+<h1>
+
+${career.icon}
+
+${career.title}
+
+</h1>
+
+
+<p>
+
+${career.description}
+
+</p>
+
+
+
+<h3>
+Ton parcours conseillé :
+</h3>
+
+
+<ul>
+
+${career.roadmap
+  .map(
+    (step) => `
+<li>${step}</li>
+`,
+  )
+  .join("")}
+
+</ul>
+
+
+<button id="restart">
+
+Refaire le test
+
+</button>
+
+
+</div>
+
+`;
+
+  document.querySelector("#restart").addEventListener("click", restartQuiz);
+}
+
+// ===============================
+// RESET
+// ===============================
+
+function restartQuiz() {
+  state.currentQuestion = 0;
+
+  Object.keys(state.scores).forEach((key) => (state.scores[key] = 0));
+
+  renderQuestion();
+}
+
+// ===============================
+// SCROLL ANIMATION
+// ===============================
 
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-
-        entry.target.style.transform = "translateY(0)";
+        entry.target.classList.add("show");
       }
     });
   },
-
   {
     threshold: 0.15,
   },
 );
 
-sections.forEach((section) => {
-  section.style.opacity = 0;
+document
+  .querySelectorAll("section")
+  .forEach((section) => observer.observe(section));
 
-  section.style.transform = "translateY(40px)";
+// ===============================
+// YEAR UPDATE
+// ===============================
 
-  section.style.transition = "1s ease";
+const year = document.querySelector("footer p");
 
-  observer.observe(section);
-});
-
-// ======================================
-// EFFET CURSEUR FUTURISTE
-// ======================================
-
-document.addEventListener(
-  "mousemove",
-
-  (e) => {
-    const glow = document.createElement("div");
-
-    glow.style.position = "fixed";
-
-    glow.style.left = e.clientX + "px";
-
-    glow.style.top = e.clientY + "px";
-
-    glow.style.width = "10px";
-
-    glow.style.height = "10px";
-
-    glow.style.background = "#00f5ff";
-
-    glow.style.borderRadius = "50%";
-
-    glow.style.pointerEvents = "none";
-
-    glow.style.boxShadow = "0 0 20px #00f5ff";
-
-    document.body.appendChild(glow);
-
-    setTimeout(() => {
-      glow.remove();
-    }, 300);
-  },
-);
+if (year) {
+  year.textContent = `TechPath © ${new Date().getFullYear()}`;
+}
