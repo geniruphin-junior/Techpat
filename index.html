@@ -4,88 +4,125 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>TechPath | Trouve ton chemin dans la Tech</title>
+    <!-- SEO -->
+    <title>TechPath Goma | Orientation Tech pour les jeunes</title>
+    <meta
+      name="description"
+      content="TechPath aide les jeunes débutants à trouver leur voie dans la tech. Créé par Ruphin, 14 ans, élève à Goma."
+    />
 
+    <!-- Icônes Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Ton CSS unique -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <!-- ================= HEADER ================= -->
-
     <header>
       <nav>
-        <div class="logo">🚀 TechPath</div>
+        <div class="logo">
+          <i class="fab fa-python" style="color: #3776ab"></i>
+          TechPath
+        </div>
 
         <ul>
           <li><a href="#home">Accueil</a></li>
+          <li><a href="#about">À propos</a></li>
           <li><a href="#jobs">Métiers</a></li>
           <li><a href="#roadmap">Parcours</a></li>
           <li><a href="#test">Orientation</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <!-- Bouton thème (Soleil/Lune) -->
+        <button id="themeToggle" aria-label="Changer le thème">
+          <i class="fas fa-moon"></i>
+        </button>
       </nav>
     </header>
 
     <!-- ================= HERO ================= -->
-
     <section class="hero" id="home">
       <div class="hero-content">
-        <span> 🌍 Orientation numérique pour la nouvelle génération </span>
-
+        <span>🇨🇩 Orientation tech pour les jeunes débutants</span>
         <h1>
-          Ne choisis pas un langage.
-          <br />
-
+          Ne choisis pas un langage.<br />
           Découvre ton futur.
         </h1>
-
         <p>
-          Beaucoup de jeunes commencent le code sans comprendre où ils vont.
-          TechPath t'aide à découvrir : les métiers, les compétences, les
-          parcours réalistes et les projets à construire.
+          Beaucoup de jeunes commencent à coder sans savoir où ils vont.
+          TechPath t'aide à découvrir les métiers, les compétences et les
+          parcours réalistes pour débuter.
         </p>
-
         <button id="startTest">Trouver mon domaine 🚀</button>
       </div>
 
       <div class="hero-visual">
         <div class="ai-card">
-          🤖
-
+          <i class="fab fa-python" style="font-size: 70px; color: #3776ab"></i>
           <h3>Future AI Engineer</h3>
-
           <p>Python • Data • ML • IA</p>
         </div>
       </div>
     </section>
 
-    <!-- ================= PROBLEME ================= -->
+    <!-- ================= À PROPOS (toi, Ruphin) ================= -->
+    <section id="about" class="about">
+      <h2>👨‍💻 Qui suis-je ?</h2>
+      <div class="about-container">
+        <div class="about-image">
+          <!-- Logo Python à la place de ta photo -->
+          <i class="fab fa-python" style="font-size: 120px; color: #3776ab"></i>
+        </div>
+        <div class="about-text">
+          <h3>Ruphin, 14 ans • Élève au Collège Mwanga</h3>
+          <p><i class="fas fa-map-pin" style="color: #06b6d4"></i> Goma, RDC</p>
+          <p>
+            Je suis un jeune passionné par
+            <strong>Python, les données et l'IA</strong>. J'ai créé TechPath
+            pour aider les autres jeunes à s'orienter dans la tech, parce que
+            j'ai compris que <strong>l'orientation est la clé</strong> pour ne
+            pas abandonner.
+          </p>
+          <div class="about-stats">
+            <span><i class="fas fa-school"></i> Collège Mwanga (Sci.)</span>
+            <span><i class="fas fa-code"></i> Python ❤️</span>
+            <span><i class="fas fa-robot"></i> Futur Ingénieur IA</span>
+          </div>
+          <div class="about-social">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ================= PROBLÈME ================= -->
     <section class="problem">
-      <h2>Pourquoi les développeurs abandonnent ?</h2>
-
+      <h2>Pourquoi les débutants abandonnent ?</h2>
       <div class="grid">
         <article>
           <h3>❌ Apprendre sans objectif</h3>
-
           <p>
-            "J'apprends Python parce que c'est populaire." Mais : IA ? Web ?
-            Data ? Automatisation ?
+            "J'apprends Python parce que c'est populaire." Mais pour quoi faire
+            ? IA ? Web ? Data ? Automatisation ?
           </p>
         </article>
-
         <article>
           <h3>❌ Copier sans comprendre</h3>
-
           <p>
             Un code trouvé sur internet n'est pas une compétence. La
             compréhension est la clé.
           </p>
         </article>
-
         <article>
           <h3>❌ Vouloir tout maîtriser</h3>
-
           <p>
             10 langages appris superficiellement ne remplacent pas une vraie
             expertise.
@@ -95,17 +132,15 @@
     </section>
 
     <!-- ================= HISTOIRE ================= -->
-
     <section class="story">
       <h2>Mon parcours et mes erreurs</h2>
-
       <div class="story-box">
         <p>
-          Je suis Ruphin. Au début, je voulais apprendre beaucoup de
-          technologies : Python, Web, IA... Parfois je copiais du code sans
-          vraiment comprendre. J'ai compris une chose :
+          Je suis Ruphin, j'ai 14 ans et je suis au Collège Mwanga à Goma. Au
+          début, je voulais apprendre beaucoup de technologies : Python, Web,
+          IA... Parfois je copiais du code sans comprendre. J'ai compris une
+          chose :
         </p>
-
         <h3>
           Un ingénieur n'est pas celui qui connaît le plus de technologies.
           C'est celui qui sait apprendre, comprendre et créer.
@@ -113,124 +148,123 @@
       </div>
     </section>
 
-    <!-- ================= METIERS ================= -->
-
+    <!-- ================= MÉTIERS ================= -->
     <section id="jobs">
       <h2>Choisis un monde de la Tech</h2>
-
       <div class="grid jobs">
         <article>
-          <h3>🤖 Ingénieur IA</h3>
-
+          <i class="fas fa-robot fa-2x" style="color: #06b6d4"></i>
+          <h3>Ingénieur IA</h3>
           <p>
             Créer des intelligences artificielles, des robots et des systèmes
             autonomes.
           </p>
         </article>
-
         <article>
-          <h3>🌐 Développeur Web</h3>
-
+          <i class="fas fa-globe fa-2x" style="color: #38bdf8"></i>
+          <h3>Développeur Web</h3>
           <p>Créer des plateformes, sites et applications web.</p>
         </article>
-
         <article>
-          <h3>📱 Développeur Mobile</h3>
-
+          <i class="fas fa-mobile-alt fa-2x" style="color: #fbbf24"></i>
+          <h3>Développeur Mobile</h3>
           <p>Créer des applications Android et mobiles utiles.</p>
         </article>
-
         <article>
-          <h3>📊 Data Engineer</h3>
-
-          <p>Construire les systèmes qui organisent les données.</p>
+          <i class="fas fa-chart-bar fa-2x" style="color: #22c55e"></i>
+          <h3>Data Scientist</h3>
+          <p>Analyser des données et en tirer des informations précieuses.</p>
         </article>
-
         <article>
-          <h3>🔐 Cybersécurité</h3>
-
+          <i class="fas fa-shield-alt fa-2x" style="color: #ef4444"></i>
+          <h3>Cybersécurité</h3>
           <p>Protéger les systèmes contre les attaques.</p>
         </article>
       </div>
     </section>
 
     <!-- ================= ROADMAP ================= -->
-
     <section id="roadmap">
       <h2>Les chemins d'apprentissage</h2>
-
       <div class="roadmaps">
         <div>
-          <h3>🤖 IA Engineer</h3>
-
+          <h3>
+            <i class="fas fa-robot" style="color: #06b6d4"></i> IA Engineer
+          </h3>
           <p>
             Python ↓ Maths ↓ Machine Learning ↓ Deep Learning ↓ IA Générative
           </p>
         </div>
-
         <div>
-          <h3>🌐 Web Developer</h3>
-
+          <h3>
+            <i class="fas fa-globe" style="color: #38bdf8"></i> Web Developer
+          </h3>
           <p>HTML/CSS ↓ JavaScript ↓ React ↓ Backend ↓ Applications</p>
         </div>
-
         <div>
-          <h3>📊 Data</h3>
-
+          <h3>
+            <i class="fas fa-chart-bar" style="color: #22c55e"></i> Data
+            Scientist
+          </h3>
           <p>Python ↓ SQL ↓ Statistiques ↓ ML ↓ Data Engineering</p>
         </div>
       </div>
     </section>
 
     <!-- ================= AFRIQUE ================= -->
-
     <section class="africa">
-      <h2>Construire depuis l'Afrique 🇨🇩</h2>
-
+      <h2>Construire depuis Goma 🇨🇩</h2>
       <p>
-        Il n'existe pas un chemin magique. Le développement web et mobile sont
-        souvent de bonnes portes d'entrée : ✔ créer rapidement des projets ✔
-        travailler avec des clients ✔ construire un portfolio Ensuite, on peut
-        évoluer vers : IA, Data, Cloud, Cybersécurité, Robotique.
+        Pas besoin d'être à Kinshasa ou à l'étranger pour réussir dans la tech.
+        Avec un ordinateur et une connexion internet, tu peux apprendre, créer
+        et construire des projets qui changent la vie des gens autour de toi.
       </p>
     </section>
 
-    <!-- ================= TEST ================= -->
-
+    <!-- ================= QUIZ ================= -->
     <section id="test">
       <h2>Quel domaine est fait pour toi ?</h2>
-
       <div class="quiz-box">
         <p>Réponds à quelques questions et découvre ton profil.</p>
-
-        <div id="quiz">Le test intelligent arrivera ici 🧠</div>
-      </div>
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-
-    <section id="contact">
-      <h2>Créer ensemble 🚀</h2>
-
-      <div class="github-card">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-        />
-
-        <div>
-          <h3>Ruphin</h3>
-
-          <p>Développeur Python • Data • IA Créateur de TechPath</p>
+        <div id="quiz">
+          <!-- Le quiz sera injecté par JS -->
         </div>
       </div>
     </section>
 
-    <footer>
-      <p>TechPath © 2026</p>
+    <!-- ================= CONTACT ================= -->
+    <section id="contact">
+      <h2>On construit ensemble 🚀</h2>
+      <div class="github-card">
+        <i class="fab fa-python fa-4x" style="color: #3776ab"></i>
+        <div>
+          <h3>Ruphin</h3>
+          <p>Élève au Collège Mwanga • Passionné Python & IA</p>
+          <div style="display: flex; gap: 15px; margin-top: 10px">
+            <a href="#" style="color: #60a5fa"
+              ><i class="fab fa-github fa-2x"></i
+            ></a>
+            <a href="#" style="color: #60a5fa"
+              ><i class="fab fa-linkedin fa-2x"></i
+            ></a>
+            <a href="#" style="color: #60a5fa"
+              ><i class="fab fa-twitter fa-2x"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <p>Apprendre • Construire • Innover</p>
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <p>TechPath © 2026 • Apprendre • Construire • Innover</p>
+      <p style="margin-top: 10px">
+        <i class="fas fa-heart" style="color: #ef4444"></i> Fait avec passion à
+        Goma
+      </p>
     </footer>
 
+    <!-- ================= SCRIPTS ================= -->
     <script src="script.js"></script>
   </body>
 </html>
